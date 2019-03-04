@@ -1,0 +1,40 @@
+{%extends "core1/base.html" %}
+{% block content %}
+<a href="{% url "emp_form" %}"> Create</a>
+
+<table style="width:70%">
+      <thead>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Department</th>
+    <th>Designation</th>
+    <th>view</th>     
+    <th>update</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for a in a %}
+<tr>
+  <td>{{a.id}}</td>
+  <td>{{a.first_name}}</td>
+  <td>{{a.department}}</td>
+  <td> {{a.designation}}</td>
+  <td> <a class="btn btn-primary" href="/emp_detail/{{a.pk}}"> view</a></td>
+  <td> <a class="btn btn-success" href="/emp_detail/update/{{a.pk}}">update</a></td>
+  <td><a class="btn btn-warning" href="/emp_detail/delete/{{a.pk}}"> Delete</a></td>
+    
+</tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="{% url 'emp_form' %}">create</a>
+</body>
+{% endblock %}
+
+
+
+
+
