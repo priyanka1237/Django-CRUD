@@ -28,6 +28,8 @@ def emp_delete(request,pk):
     q.delete()
     return redirect("xyz1")
 
+    
+
 
 @login_required()
 def emp_form(request):
@@ -38,6 +40,10 @@ def emp_form(request):
         return redirect("xyz1")
     template="core1/emp_form.html"
     return render(request,template,{'form':form})
+
+
+
+
 
     
 @login_required()
